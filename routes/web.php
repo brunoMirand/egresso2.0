@@ -11,16 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return '<h1>SHOW DE BOLA</h1>';
-});
+Auth::routes();
 
-Route::get(
-    '/alunos',
-    'AlunosController@listarAlunos');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get(
-    '/alunos/frequencia/{id}',
-    'AlunosController@frequenciaDoAluno')
-    ->where('id', '[0-9]+');
+Route::get('/alunos', 'AlunosController@listarAlunos');
+
+Route::get('/alunos/frequencia/{id}', 'AlunosController@frequenciaDoAluno')->where('id', '[0-9]+');
+

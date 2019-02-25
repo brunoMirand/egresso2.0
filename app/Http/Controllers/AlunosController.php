@@ -11,7 +11,7 @@ class AlunosController extends Controller {
 
         $alunos = DB::select('SELECT * FROM alunos');
 
-        return view('listagemDeAlunos')->with('alunos', $alunos);
+        return view('alunos.listagemDeAlunos')->with('alunos', $alunos);
 
     }
 
@@ -25,7 +25,7 @@ class AlunosController extends Controller {
         if(empty($frequencia)) {
             return 'ERROR';
         }
-        return view('frequenciaDoAluno')->with('frequencias', $frequencia[0]);
+        return view('alunos.frequenciaDoAluno')->with('frequencias', $frequencia[0]);
     }
 }
 
