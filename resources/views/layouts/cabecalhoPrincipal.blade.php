@@ -16,7 +16,7 @@
 				<a class="navbar-brand" href="#">Egresso</a>
 			</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Voltar</a></li>
+					<li><a href="{{ action('HomeController@index') }}">Voltar</a></li>
 				</ul>
 			</div>
 		</nav>

@@ -4,12 +4,14 @@ namespace egresso\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Request;
+use egresso\Alunos;
+
 
 class AlunosController extends Controller {
 
     public function listarAlunos() {
 
-        $alunos = DB::select('SELECT * FROM alunos');
+        $alunos = Alunos::all();
 
         return view('alunos.listagemDeAlunos')->with('alunos', $alunos);
 
@@ -17,18 +19,33 @@ class AlunosController extends Controller {
 
     public function frequenciaDoAluno($id) {
 
-        $frequencia = DB::select('SELECT A.id, A.RA, nome, email, curso, status, MONTH(data_entrada) AS MES, DAY(data_entrada) AS DIA, TIME(data_entrada) AS HORARIO FROM alunos AS A
-                        INNER JOIN cursos AS C ON A.cursos_id = C.id INNER JOIN anos AS AN ON A.anos_id = AN.id INNER JOIN semestres AS S ON A.semestres_id = S.id
-                            INNER JOIN cidades AS CI ON A.cidades_id = CI.id INNER JOIN matricula AS M ON A.matricula_id = M.id RIGHT JOIN frequencia as F ON A.RA = F.RA
-                                WHERE A.id = ?', [$id], ' AND MONTH(data_entrada) = ?', [12] , ' ORDER BY MONTH(data_entrada) DESC, DAY(data_entrada) DESC, TIME(data_entrada) DESC');
-
+        $frequencia = Alunos::find($id);
         if(empty($frequencia)) {
             return 'ERROR';
         }
-        return view('alunos.frequenciaDoAluno')->with('frequencias', $frequencia[0]);
+        return view('alunos.frequenciaDoAluno')->with('frequencias', $frequencia);
+    }
+
+    public function formularioDeCadastro() {
+
+        return view('alunos.formularioDeCadastro');
+    }
+
+    public function cadastrarAluno() {
+
+        // $parametros = Request::all();
+        // $alunos = new Alunos($parametros);
+        // $alunos->save();
+
+        Alunos::create(Request::all());
+        return redirect()->action('AlunosController@listarAlunos')->withInput(Request::only('nome'));
+    }
+
+    public function removerAluno($id) {
+        $aluno = Alunos::find($id);
+        $aluno->delete();
+        return redirect()->action('AlunosController@listarAlunos');
     }
 }
-
-
 
 ?>

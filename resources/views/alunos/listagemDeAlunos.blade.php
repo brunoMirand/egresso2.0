@@ -2,6 +2,11 @@
 
 @section('conteudo')
   <h1 class="text-center">Alunos</h1>
+  	@if(old('nome'))
+  		<div class="alert alert-primary" role="alert">
+        	Aluno {{ old('nome') }} adicionando com sucesso
+		</div>
+	@endif
 	<table class="table table-dark">
 		<thead>
 			<tr>
@@ -18,7 +23,8 @@
 				<td scope="row">{{ $aluno->email }}</td>
 				<td scope="row">{{ $aluno->cpf  }}</td>
 				<td scope="row">
-					<a class="btn btn-success" href="/alunos/frequencia/{{ $aluno->id }}">Frequência</a>
+					<a class="btn btn-success" href="/alunos/frequencia/{{ $aluno->id }}">Frequência<span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+					<a class="btn btn-danger" href="/alunos/remove/{{ $aluno->id }}"><strong aria-hidden="true">X</strong></a>
 				</td>
 			</tr>
 		</tbody>
