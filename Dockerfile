@@ -5,5 +5,5 @@ RUN docker-php-ext-install pdo mbstring
 WORKDIR /app
 COPY . /app
 RUN composer install --no-plugins --no-scripts
-CMD php artisan serve --host=0.0.0.0 --port=8181
+COPY ./run.sh /
 EXPOSE 8181
