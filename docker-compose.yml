@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: egresso-app
     volumes:
-      - .:/var/www/app
+      - .:/var/www/html/egresso2.0
     ports:
       - "8181:8181"
       - "8083:8083"
