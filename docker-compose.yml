@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: egresso-app
     volumes:
-      - .:/var/www/html/egresso2.0
+      - ./var/www/html/egresso2.0:/var/www/egresso2.0
     ports:
       - "8181:8181"
       - "8083:8083"
@@ -16,22 +16,26 @@ services:
       - mysql
     networks:
       - dev
+
   mysql:
     image: mysql:5.7
     container_name: egresso-mysql
     volumes:
-      - data:/var/lib/mysql
+      - ./:/var/lib/mysql
     ports:
       - "3306:3306"
     environment:
-      - DB_DATABASE=evasao
-      - DB_USERNAME=bruno
-      - DB_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=evasao
+      - MYSQL_USERNAME=bruno
+      - MYSQL_PASSWORD=secret
     networks:
       - dev
+
 volumes:
   data:
     driver: local
+
 networks:
   dev:
-    name: tr_network
+    name: egresso
