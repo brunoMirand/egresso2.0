@@ -1,0 +1,2 @@
+FROM mysql:5.7
+ADD ./database/db/dumps/backup.sql /docker-entrypoint-initdb.d
