@@ -16,29 +16,22 @@ services:
       - mysql
     networks:
       - dev
-
   mysql:
     container_name: egresso-mysql
-    volumes:
-      - ./database:/var/lib/mysql
+    # volumes:
+    #   - ./database/db/dumps/backup.sql:/var/lib/mysql
     ports:
       - "3306:3306"
-    env_file:
-      - .env
     environment:
-      - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_USERNAME=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=supersecret
+      - MYSQL_DATABASE=evasao
+      - MYSQL_USERNAME=bruno
+      - MYSQL_PASSWORD=secret
     build:
       context: .
       dockerfile: ./database/db/dockerfile.db
     networks:
       - dev
-
-# volumes:
-#   db-data: ./database
-
 networks:
   dev:
     name: egresso
