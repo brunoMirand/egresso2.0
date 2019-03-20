@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo Copying the configuration example file
-cp .env.example .env
+#cp .env.example .env
 
 echo Install dependencies
 composer install
