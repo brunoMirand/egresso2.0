@@ -8,14 +8,18 @@
 				<th scope="col">Nome</th>
 				<th scope="col">Mes</th>
 				<th scope="col">Dia</th>
+				<th scope="col">Horário</th>
 			</tr>
 		</thead>
 		<tbody>
+		@foreach($frequencias as $frequencia)
 			<tr>
-				<td>{{ $frequencias->nome }}</td>
-				<td>{{ $frequencias->MES  }}</td>
-				<td>{{ $frequencias->DIA  }}</td>
+				<td>{{ $frequencia->nome }}</td>
+				<td>{{ $frequencia->mes }}</td>
+				<td>{{ $frequencia->dia }}</td>
+				<td>{{ $frequencia->horario }}</td>
 			</tr>
+		@endforeach
 		</tbody>
 	<table>
 @stop

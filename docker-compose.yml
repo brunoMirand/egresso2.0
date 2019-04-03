@@ -18,14 +18,12 @@ services:
       - dev
   mysql:
     container_name: egresso-mysql
-    # volumes:
-    #   - ./database/db/dumps/backup.sql:/var/lib/mysql
     ports:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=supersecret
       - MYSQL_DATABASE=evasao
-      - MYSQL_USERNAME=bruno
+      - MYSQL_USER=bruno
       - MYSQL_PASSWORD=secret
     build:
       context: .
