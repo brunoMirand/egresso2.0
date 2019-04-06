@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo Copying the configuration example file
 cp .env.example .env
 
@@ -15,5 +14,7 @@ php artisan key:generate
 #echo Make seeds
 #php artisan db:seed
 
+figlet EGRESSO
 echo up server
 php artisan serve --host=0.0.0.0 --port=8181
+

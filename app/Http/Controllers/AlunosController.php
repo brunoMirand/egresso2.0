@@ -35,6 +35,7 @@ class AlunosController extends Controller
         $aluno->delete();
         return redirect()->action('AlunosController@listarAlunos');
     }
+
 }
 
 ?>

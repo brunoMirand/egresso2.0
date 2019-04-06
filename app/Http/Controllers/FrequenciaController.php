@@ -9,7 +9,8 @@ class FrequenciaController extends Controller
 {
     public function frequenciaDoAluno($id)
     {
-        $frequencia = Frequencia::frequencia($id);
-        return view('alunos.frequenciaDoAluno')->with('frequencias', $frequencia);
+        $frequencia = Frequencia::frequenciaDiaria($id);
+        return view('alunos.frequencias.frequenciaDoAluno')->with('frequencias', $frequencia);
     }
+
 }
