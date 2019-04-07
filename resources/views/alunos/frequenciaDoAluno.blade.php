@@ -1,4 +1,4 @@
-@extends('layouts.cabecalhoPrincipal')
+@extends('layouts.headerFrequenciaAluno')
 
 @section('conteudo')
 <div class="main-content">

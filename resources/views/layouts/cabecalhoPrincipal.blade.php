@@ -35,7 +35,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="#">
                             <img src="#" alt="FATEC" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -58,28 +58,28 @@
                                 <i class="fas fa-search"></i>Alunos</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="listagem-alunos.php">Consultar Alunos</a>
+                                    <a href="/alunos">Consultar Alunos</a>
                                 </li>
                                 <li>
-                                    <a href="feedback-aluno.php">Feedback</a>
+                                    <a href="#">Feedback</a>
                                 </li>
                                 <li>
-                                    <a href="avaliacao-aluno.php">Avaliação dos Alunos</a>
+                                    <a href="#">Avaliação dos Alunos</a>
                                 </li>
 
                             </ul>
                         </li>
                         <li>
-                            <a href="graficos.php">
+                            <a href="#">
                                 <i class="fas fa-chart-bar"></i>Metricas</a>
                         </li>
 
                         <li>
-                            <a href="formulario-cadastro.php">
+                            <a href="/formulario">
                                 <i class="fas fa-user"></i>Cadastrar</a>
                         </li>
                         <li>
-                            <a href="contatar-aluno.php">
+                            <a href="#">
                                 <i class="zmdi zmdi-email-open"></i>Contato</a>
                         </li>
 
@@ -88,16 +88,16 @@
 
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                     <li>
-                                        <a href="qrcode-alunos.php">QrCode</a>
+                                        <a href="#">QrCode</a>
                                     </li>
                                     <li>
-                                        <a href="../controller/backup-alunos.php">Fazer Backup</a>
+                                        <a href="#">Fazer Backup</a>
                                     </li>
                                     <li>
-                                        <a href="../controller/exportar-dados.php">Exportar para CSV</a>
+                                        <a href="#">Exportar para CSV</a>
                                     </li>
                                     <li>
-                                        <a href="curso.php">Novo Curso</a>
+                                        <a href="#">Novo Curso</a>
                                     </li>
                                 </ul>
                             </a>
@@ -113,14 +113,14 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="../images/barueri1.png" alt="FATEC" />
+                    <img src="#" alt="FATEC" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="home.php">
+                            <a href="#">
                                 <i class="fas fa-tachometer-alt"></i>Home</a>
                         </li>
                         <li class="active has-sub">
@@ -128,22 +128,22 @@
                                 <i class="fas fa-search"></i> Alunos</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="listagem-alunos.php">Consultar Alunos</a>
+                                    <a href="/alunos">Consultar Alunos</a>
                                 </li>
                                 <li>
-                                    <a href="feedback-aluno.php">Feedback</a>
+                                    <a href="#">Feedback</a>
                                 </li>
                                 <li>
-                                    <a href="avaliacao-aluno.php">Avaliação dos Alunos</a>
+                                    <a href="#">Avaliação dos Alunos</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="graficos.php">
+                            <a href="#">
                                 <i class="fas fa-chart-bar"></i>Metricas</a>
                         </li>
                         <li>
-                            <a href="formulario-cadastro.php">
+                            <a href="/formulario">
                                 <i class="fas fa-user"></i>Cadastrar</a>
                         </li>
                         <li>
@@ -155,17 +155,17 @@
                                 <i class="fa fa-save"></i>Opções</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="qrcode-alunos.php">QrCode</a>
+                                    <a href="#">QrCode</a>
                                 </li>
                                 <li>
-                                    <a href="../controller/backup-alunos.php">Efetuar Backup</a>
+                                    <a href="#">Efetuar Backup</a>
                                 </li>
 
                                 <li>
-                                    <a href="../controller/exportar-dados.php">Exportar para CSV</a>
+                                    <a href="#">Exportar para CSV</a>
                                 </li>
                                 <li>
-                                    <a href="curso.php">Novo Curso</a>
+                                    <a href="#">Novo Curso</a>
                                 </li>
                             </ul>
                         </li>
@@ -205,22 +205,11 @@
                                                 <div class="bg-c2 img-cir img-40">
                                                     <i class="zmdi zmdi-account-box"></i>
                                                 </div>
-                                                <div class="content">
-                                                    <p>Your account has been blocked</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
                                             </div>
                                             <div class="notifi__item">
                                                 <div class="bg-c3 img-cir img-40">
                                                     <i class="zmdi zmdi-file-text"></i>
                                                 </div>
-                                                <div class="content">
-                                                    <p>You got a new file</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__footer">
-                                                <a href="#">All notifications</a>
                                             </div>
                                         </div>
                                     </div>
@@ -228,7 +217,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="../images/profe.png" alt="FATEC BARUERI" />
+                                            <img src="#" alt="FATEC BARUERI" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">FATEC BARUERI</a>
@@ -237,13 +226,13 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="../images/profe.png" alt="FATEC BARUERI" />
+                                                        <img src="#" alt="FATEC BARUERI" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                            <a href="#">FATEC BARUERI</a>
-                                                        </h5>
+                                                        <a href="#">FATEC BARUERI</a>
+                                                    </h5>
 
                                                     <span class="email">adm@fatec.com</span>
                                                 </div>
@@ -252,7 +241,7 @@
 
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="../controller/logout.php">
+                                                <a href="#">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
