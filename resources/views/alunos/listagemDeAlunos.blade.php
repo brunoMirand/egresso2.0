@@ -61,7 +61,7 @@
 								@foreach($alunos as $aluno)
 								<tr>
 									<td><img src="" style="height: 50px;" title="sua foto"></td>
-									<td class="text-center process">{{ $aluno->foto  }} </td>
+									<!-- <td class="text-center process">{{ $aluno->foto  }} </td> -->
 									<td>{{ $aluno->RA  }} </td>
 									<td>{{ $aluno->nome  }} </td>
 									<td>{{ $aluno->cpf  }} </td>
@@ -70,6 +70,7 @@
 									<td>{{ $aluno->telefone  }} </td>
 									<td class="text-center">{{ $aluno->anos_id  }} </td>
 									<td>{{ $aluno->semestres_id  }} </td>
+									<td>{{ $aluno->cidades_id  }} </td>
 									<td class="text-center process">{{ $aluno->matricula_id }}</td>
 									<td><a href="/alunos/frequencia/{{ $aluno->id }}&{{ $aluno->RA }}" class="btn btn-success" role="button" aria-label="Ver frequência do aluno"><i aria-hidden="true">Frequencia</i> </td>
 									<td>
