@@ -12,7 +12,7 @@ class Frequencia extends Model
     protected $fillable =
         array('RA', 'data_entrada', 'alunos_id');
 
-    public static function frequenciaDiaria($id)
+    public function frequenciaDiaria($id)
     {
         $frequencia = DB::table('frequencia')
             ->select('*', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))
@@ -24,7 +24,7 @@ class Frequencia extends Model
         return $frequencia;
     }
 
-    public static function frequenciaTotalDiasEMes($RA)
+    public function frequenciaTotalDiasEMes($RA)
     {
         $frequencia = DB::table('frequencia')
             ->select(DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia"))
@@ -34,6 +34,17 @@ class Frequencia extends Model
             ->get();
 
         return $frequencia;
+    }
+
+    public function listarMesesDeFrequenciaDoAluno($RA)
+    {
+        $meses = DB::table('frequencia')
+            ->select(DB::raw("MONTH(data_entrada) as mes"))
+            ->where('RA', '=', $RA)
+            ->distinct()
+            ->get();
+
+        return $meses;
     }
 
 }

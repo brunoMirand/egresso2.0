@@ -7,10 +7,24 @@ use egresso\Frequencia;
 
 class FrequenciaController extends Controller
 {
-    public function frequenciaDoAluno($id)
+    private $frequencia;
+
+    public function __construct(Frequencia $frequencia)
     {
-        $frequencia = Frequencia::frequenciaDiaria($id);
-        return view('alunos.frequenciaDoAluno')->with('frequencias', $frequencia);
+        $this->frequencia = $frequencia;
+    }
+
+    public function frequenciaDoAluno($id, $RA)
+    {
+        $frequenciaDiaria = $this->frequencia->frequenciaDiaria($id);
+        $mesesDeFrequencia = $this->frequencia->listarMesesDeFrequenciaDoAluno($RA);
+
+        $dados = [
+            'frequenciaDiaria' => $frequenciaDiaria,
+            'mesesDeFrequencia' => $mesesDeFrequencia
+        ];
+
+        return view('alunos.frequenciaDoAluno')->with('dados', $dados);
     }
 
 }

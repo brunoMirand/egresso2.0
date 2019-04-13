@@ -13,7 +13,7 @@
             </thead>
             <tbody>
                 <p class="text text-right"> Registros </p>
-                @foreach($frequencias as $frequencia)
+                @foreach($dados['frequenciaDiaria'] as $frequencia)
                 <tr>
                     <td>{{ $frequencia->RA }}</td>
                     <td>{{ $frequencia->nome }}</td>

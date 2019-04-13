@@ -1,4 +1,4 @@
-@extends('layouts.cabecalhoPrincipal')
+@extends('layouts.headerPrincipal')
 @section('conteudo')
 <div class="main-content">
 	<div class="section__content section__content--p30">

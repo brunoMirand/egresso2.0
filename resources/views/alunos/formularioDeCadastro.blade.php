@@ -1,4 +1,4 @@
-@extends('layouts.cabecalhoPrincipal')
+@extends('layouts.headerPrincipal')
 
 @section('conteudo')
     <form action="/alunos/cadastro" method="POST" enctype="multipart/form-data">

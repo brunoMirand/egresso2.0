@@ -2,7 +2,9 @@
     <form class="form-header" method="GET">
         <select name="mes" id="select" class="form-control">
             <option disabled selected>Filtro por MÊS</option>
-            <option  value="mes">mes</option>
+        @foreach($dados['mesesDeFrequencia'] as $frequencia)
+            <option value="{{ ($frequencia->mes) }}">{{ ($frequencia->mes) }}</option>
+        @endforeach
         </select>
         <button class="au-btn--submit" type="submit">
             <i class="zmdi zmdi-search"></i>
