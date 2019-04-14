@@ -12,25 +12,13 @@ class Frequencia extends Model
     protected $fillable =
         array('RA', 'data_entrada', 'alunos_id');
 
-    public function frequenciaDiaria($id)
+    public function frequenciaGeral($id)
     {
         $frequencia = DB::table('frequencia')
             ->select('*', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))
             ->leftjoin('alunos', 'frequencia.RA', '=', 'alunos.RA')
             ->where('alunos.id', '=', $id)
-            ->orderBy('mes', 'dia', 'horario', 'DESC')
-            ->get();
-
-        return $frequencia;
-    }
-
-    public function frequenciaTotalDiasEMes($RA)
-    {
-        $frequencia = DB::table('frequencia')
-            ->select(DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia"))
-            ->where('RA', '=', $RA)
-            ->groupBy('data_entrada')
-            ->orderBy('mes', 'dia', 'DESC')
+            ->orderByRaw('mes DESC, dia DESC, horario DESC')
             ->get();
 
         return $frequencia;
@@ -47,4 +35,38 @@ class Frequencia extends Model
         return $meses;
     }
 
+    public function frequenciaDiariaDoMes($id)
+    {
+        $mes = '11';
+        $frequencia = DB::table('frequencia')
+            ->select('frequencia.RA', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, COUNT(frequencia.RA) as quantidade"))
+            ->leftjoin('alunos', 'frequencia.RA', '=', 'alunos.RA')
+            ->where([
+                ['alunos.id', '=', $id],
+                [DB::raw("MONTH(data_entrada)"), '=', $mes]
+            ])
+            ->groupBy('mes', 'dia')
+            ->orderByRaw('mes, dia DESC')
+            ->limit(5)
+            ->get();
+
+        return $frequencia;
+    }
+
+    public function listarMesEDiaDeFrequencia($RA)
+    {
+        $mes = '11';
+        $frequencia = DB::table('frequencia')
+            ->select(DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia"))
+            ->where([
+                ['RA', '=', $RA],
+                [DB::raw("MONTH(data_entrada)"), '=', $mes]
+            ])
+            ->groupBy('mes', 'dia')
+            ->orderByRaw('mes, dia DESC')
+            ->distinct()
+            ->get();
+
+        return $frequencia;
+    }
 }

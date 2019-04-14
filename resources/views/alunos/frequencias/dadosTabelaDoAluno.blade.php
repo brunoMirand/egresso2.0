@@ -8,12 +8,14 @@
             </tr>
         </thead>
         <tbody>
+        @foreach($dados['mesDiaDeFrequencia'] as $frequencia)
             <tr>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
+                <td class="text-center">{{ $frequencia->mes }}</td>
+                <td class="text-center">{{ $frequencia->dia }}</td>
             </tr>
+        @endforeach
         </tbody>
     </table>
-        <p class="text text-right">  Registros </p>
+        <p class="text text-right">  Registros {{ count($dados['mesDiaDeFrequencia']) }}</p>
     </div>
 </div>

@@ -16,12 +16,17 @@ class FrequenciaController extends Controller
 
     public function frequenciaDoAluno($id, $RA)
     {
-        $frequenciaDiaria = $this->frequencia->frequenciaDiaria($id);
+        $frequenciaGeral = $this->frequencia->frequenciaGeral($id);
         $mesesDeFrequencia = $this->frequencia->listarMesesDeFrequenciaDoAluno($RA);
+        $frequenciaDiariaDoMes = $this->frequencia->frequenciaDiariaDoMes($id);
+        $mesDiaDeFrequencia = $this->frequencia->listarMesEDiaDeFrequencia($RA);
+
 
         $dados = [
-            'frequenciaDiaria' => $frequenciaDiaria,
-            'mesesDeFrequencia' => $mesesDeFrequencia
+            'frequenciaGeral' => $frequenciaGeral,
+            'mesesDeFrequencia' => $mesesDeFrequencia,
+            'frequenciaDiariaDoMes' => $frequenciaDiariaDoMes,
+            'mesDiaDeFrequencia' => $mesDiaDeFrequencia
         ];
 
         return view('alunos.frequenciaDoAluno')->with('dados', $dados);
