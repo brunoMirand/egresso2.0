@@ -8,7 +8,7 @@
         @foreach($dados['frequenciaDiariaDoMes'] as $frequencia)
             <code><strong>Dia: </strong>{{ $frequencia->dia }}</code>
             <div class="progress mb-2">
-                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width:{{$frequencia->quantidade + 5}}%" aria-valuenow="{{ $frequencia->quantidade }}%" aria-valuemin="1" aria-valuemax="100">{{ $frequencia->quantidade }}%</div>
+                <div class="progress-bar {{ $frequencia->quantidade > 3 ? 'bg-primary' : 'bg-warning' }} progress-bar-striped progress-bar-animated" role="progressbar" style="width:{{$frequencia->quantidade + 5}}%" aria-valuenow="{{ $frequencia->quantidade }}%" aria-valuemin="1" aria-valuemax="100">{{ $frequencia->quantidade }}%</div>
             </div>
         @endforeach
             <hr>

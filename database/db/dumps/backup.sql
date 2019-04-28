@@ -29,7 +29,7 @@ CREATE TABLE `alunos` (
   `cpf` varchar(11) NOT NULL,
   `email` varchar(45) NOT NULL,
   `telefone` varchar(11) NOT NULL,
-  `foto` varchar(45) DEFAULT NULL,
+  `foto` longblob,
   `cursos_id` int(11) NOT NULL,
   `anos_id` int(11) NOT NULL,
   `semestres_id` int(11) NOT NULL,

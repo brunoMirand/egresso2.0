@@ -60,8 +60,7 @@
 								<p class="text text-right">  {{ $contarAlunos = count($alunos) }} Registros </p>
 								@foreach($alunos as $aluno)
 								<tr>
-									<td><img src="" style="height: 50px;" title="sua foto"></td>
-									<!-- <td class="text-center process">{{ $aluno->foto  }} </td> -->
+									<td><img src='data:image/png;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td>
 									<td>{{ $aluno->RA  }} </td>
 									<td>{{ $aluno->nome  }} </td>
 									<td>{{ $aluno->cpf  }} </td>

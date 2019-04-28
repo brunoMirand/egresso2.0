@@ -19,13 +19,16 @@ class AlunosController extends Controller
         return view('alunos.formularioDeCadastro');
     }
 
-    public function cadastrarAluno()
+    public function cadastrarAluno(Request $request)
     {
-        // $parametros = Request::all();
-        // $alunos = new Alunos($parametros);
-        // $alunos->save();
 
-        Alunos::create(Request::all());
+        $data = $request::all();
+        $data['foto'];
+        if ($request::hasFile('foto') && $request::file('foto')->isValid()) {
+            $data['foto'] = $this->converterImagemEmBase64($request::file('foto'));
+        }
+
+        Alunos::create($data);
         return redirect()->action('AlunosController@listarAlunos')->withInput(Request::only('nome'));
     }
 
@@ -34,6 +37,11 @@ class AlunosController extends Controller
         $aluno = Alunos::find($id);
         $aluno->delete();
         return redirect()->action('AlunosController@listarAlunos');
+    }
+
+    public function converterImagemEmBase64($imagem)
+    {
+        return \base64_encode(file_get_contents($imagem));
     }
 
 }

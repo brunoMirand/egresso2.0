@@ -12,6 +12,12 @@ class Frequencia extends Model
     protected $fillable =
         array('RA', 'data_entrada', 'alunos_id');
 
+    public function dadosDoAluno($id)
+    {
+        $dados = Alunos::find($id);
+        return $dados;
+    }
+
     public function frequenciaGeral($id)
     {
         $frequencia = DB::table('frequencia')
