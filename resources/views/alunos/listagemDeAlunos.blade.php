@@ -60,6 +60,7 @@
 								<p class="text text-right">  {{ $contarAlunos = count($alunos) }} Registros </p>
 								@foreach($alunos as $aluno)
 								<tr>
+									<!-- <td><img src="{{ url('storage/images/'.$aluno->foto) }}" style="height: 55px; width: 70px;" title="sua foto"></td> -->
 									<td><img src='data:image/png;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td>
 									<td>{{ $aluno->RA  }} </td>
 									<td>{{ $aluno->nome  }} </td>
@@ -73,7 +74,7 @@
 									<td class="text-center process">{{ $aluno->matricula_id }}</td>
 									<td><a href="/alunos/frequencia/{{ $aluno->id }}&{{ $aluno->RA }}" class="btn btn-success" role="button" aria-label="Ver frequência do aluno"><i aria-hidden="true">Frequencia</i> </td>
 									<td>
-										<form action="" method="POST">
+										<form action="#" method="POST">
 										<input type="hidden" name="id" value="">
 											<button class="btn btn-danger"><i class="fa fa-close"></i> </button>
 										</form>
