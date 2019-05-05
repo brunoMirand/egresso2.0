@@ -1,6 +1,6 @@
 <?php
 
-namespace egresso;
+namespace egresso\repository;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
@@ -12,13 +12,12 @@ class Frequencia extends Model
     protected $fillable =
         array('RA', 'data_entrada', 'alunos_id');
 
-    public function dadosDoAluno($id)
+    public function listarDadosDoAlunoPorID($id)
     {
-        $dados = Alunos::find($id);
-        return $dados;
+        return Alunos::find($id);
     }
 
-    public function frequenciaGeral($id)
+    public function listarfrequenciaGeralDoAluno($id)
     {
         $frequencia = DB::table('frequencia')
             ->select('*', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))

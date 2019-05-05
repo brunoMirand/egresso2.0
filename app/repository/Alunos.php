@@ -1,6 +1,6 @@
 <?php
 
-namespace egresso;
+namespace egresso\repository;
 
 use Illuminate\Database\Eloquent\Model;
 
