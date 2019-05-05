@@ -12,7 +12,7 @@ class Alunos extends Model
 
     public function listarAlunos()
     {
-        return Alunos::select('*')
+        return Alunos::select('*', 'alunos.id')
             ->join('cursos', 'cursos_id', '=', 'cursos.id')
             ->join('anos', 'anos_id', '=', 'anos.id')
             ->join('semestres', 'semestres_id', '=', 'semestres.id')
