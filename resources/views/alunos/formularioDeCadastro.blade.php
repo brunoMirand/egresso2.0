@@ -7,56 +7,143 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Formulario de Cadastro</strong> Alunos
+                            <strong>Formulario de Cadastro</strong>
                         </div>
                         <div class="card-body card-block">
                             <form action="/alunos/cadastro" method="POST" enctype="multipart/form-data">
+                            <fieldset>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">RA</label>
-                                    <input type="text" name="RA" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu RA">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="text-input" class="form-control-label">RA do Aluno</label>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <input type="text" id="text-input" name="RA" placeholder="Digite o RA do aluno" class="form-control" required maxlength="9" autofocus>
+                                        <small class="form-text text-muted">Preencha este campo</small>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Nome</label>
-                                    <input type="text" name="nome" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="text-input" class="form-control-label">Nome & Sobrenome</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="text-input" name="nome" placeholder="Digite o nome e sobrenome" class="form-control " required>
+                                        <small class="form-text text-muted">Preencha este campo</small>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">CPF</label>
-                                    <input type="text" name="CPF" class="form-control" id="exampleInputPassword1" placeholder="Digite seu CPF">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="text-input" class="form-control-label">CPF do Aluno</label>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <input type="text" id="text-input" name="CPF" placeholder="Digite o CPF do aluno" class="form-control" required maxlength="11" autofocus>
+                                        <small class="form-text text-muted">Preencha este campo</small>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Email</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="Digite seu email">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="email-input" class="form-control-label">Email</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="email" id="email-input" name="email" placeholder="Digite o email" class="form-control" required>
+                                        <small class="help-block form-text">Preencha o campo email</small>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Telefone</label>
-                                    <input type="text" name="telefone" class="form-control" id="exampleInputPassword1" placeholder="Digite seu telefone">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="telefone" class=" form-control-label">Telefone</label>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <input type="text" id="telefone" name="telefone" placeholder="Telefone do aluno" class="form-control" required maxlength="11">
+                                        <small class="help-block form-text">Preencha este campo </small>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Foto</label>
-                                    <input type="file" name="foto" accept="image/*" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="valor" class="form-control-label">Foto</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" id="valor" name="foto" placeholder="" class="form-control" accept="image/*" required>
+                                        <small class="help-block form-text">Insera a foto do aluno </small>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Curso</label>
-                                    <input type="text" name="cursos_id" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="select" class="form-control-label">Curso</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <select  name="cursos_id" id="select" class="form-control" >
+                                            <option disabled selected required>Selecione o Curso</option>
+                                            @foreach($dados['cursos'] as $curso)
+                                                <option value="{{ $curso->id }}" required>
+                                                    {{ $curso->curso }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Ano</label>
-                                    <input type="text" name="anos_id" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="select" class="form-control-label">Ano</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <select  name="anos_id" id="select" class="form-control" >
+                                            <option disabled selected required>Selecione o Ano</option>
+                                            @foreach($dados['anos'] as $ano)
+                                                <option value="{{ $ano->id }}" required>
+                                                    {{ $ano->ano }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Semestre</label>
-                                    <input type="text" name="semestres_id" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="select" class="form-control-label">Semestre</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <select  name="semestres_id" id="select" class="form-control" >
+                                            <option disabled selected required>Selecione o Semestre</option>
+                                            @foreach($dados['semestres'] as $semestre)
+                                                <option value="{{ $semestre->id }}" required>
+                                                    {{ $semestre->semestre }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Cidade</label>
-                                    <input type="text" name="cidades_id" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="select" class="form-control-label">Cidade</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <select  name="cidades_id" id="select" class="form-control" >
+                                            <option disabled selected required>Selecione a Cidade</option>
+                                            @foreach($dados['cidades'] as $cidade)
+                                                <option value="{{ $cidade->id }}" required>
+                                                    {{ $cidade->cidade }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Situação da matricula</label>
-                                    <input type="text" name="matricula_id" class="form-control" id="exampleInputPassword1" placeholder="Digite seu nome">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="select" class="form-control-label">Situação da Matricula</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <select  name="matricula_id" id="select" class="form-control" >
+                                            <option disabled selected required>Selecione o Status da Matricula</option>
+                                            @foreach($dados['status'] as $status)
+                                                <option value="{{ $status->id }}" required>
+                                                    {{ $status->status }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <fieldset>
                             </form>
                         </div>
                     </div>
