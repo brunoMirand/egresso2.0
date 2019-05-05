@@ -2,8 +2,9 @@
 
 namespace egresso\Http\Controllers;
 
-use Request;
-use egresso\Alunos;
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use egresso\repository\Alunos;
 
 class AlunosController extends Controller
 {
@@ -14,22 +15,22 @@ class AlunosController extends Controller
         return view('alunos.listagemDeAlunos')->with('alunos', $alunos);
     }
 
-    public function formularioDeCadastro()
-    {
-        return view('alunos.formularioDeCadastro');
-    }
-
     public function cadastrarAluno(Request $request)
     {
+        $data = $request->all();
+        if (empty($data['foto'])) {
+            return redirect()
+                    ->back()
+                    ->with('error', 'Falha ao fazer upload')
+                    ->withInput();
+        }
 
-        $data = $request::all();
-        $data['foto'];
-        if ($request::hasFile('foto') && $request::file('foto')->isValid()) {
-            $data['foto'] = $this->converterImagemEmBase64($request::file('foto'));
+        if ($request->hasFile('foto') && $data['foto']->isValid()) {
+            $data['foto'] = $this->converterImagemEmBase64($request->file('foto'));
         }
 
         Alunos::create($data);
-        return redirect()->action('AlunosController@listarAlunos')->withInput(Request::only('nome'));
+        return redirect()->action('AlunosController@listarAlunos')->withInput($request->only('nome'));
     }
 
     public function removerAluno($id)
@@ -45,5 +46,3 @@ class AlunosController extends Controller
     }
 
 }
-
-?>
