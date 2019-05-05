@@ -17,7 +17,7 @@
                 <tr>
                     <td>{{ $frequencia->RA }}</td>
                     <td>{{ $frequencia->nome }}</td>
-                    <td>{{ $frequencia->matricula_id }}</td>
+                    <td>{{ $frequencia->status }}</td>
                     <td class="text-center">{{ $frequencia->mes }}</td>
                     <td class="text-center">{{ $frequencia->dia }}</td>
                     <td class="text-center">{{ $frequencia->horario }}</td>

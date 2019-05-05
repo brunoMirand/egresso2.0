@@ -21,6 +21,7 @@ class Frequencia extends Model
     {
         $frequencia = DB::table('frequencia')
             ->select('*', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))
+            ->leftjoin('matricula', 'matricula.id', '=', 'matricula.id')
             ->leftjoin('alunos', 'frequencia.RA', '=', 'alunos.RA')
             ->where('alunos.id', '=', $id)
             ->orderByRaw('mes DESC, dia DESC, horario DESC')
