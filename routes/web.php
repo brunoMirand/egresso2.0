@@ -14,7 +14,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/alunos', 'AlunosController@listarAlunos');
+Route::get('/alunos', 'AlunosController@listarTodosOsAlunos');
 Route::get('/alunos/frequencia/{id}&{RA}', 'FrequenciaController@frequenciaDoAluno')->where('id', '[0-9]+');
 Route::get('/formulario', 'FormularioDeCadastroController@formularioDeCadastro');
 Route::post('/alunos/cadastro', 'AlunosController@cadastrarAluno');

@@ -65,13 +65,13 @@
 									<td>{{ $aluno->RA  }} </td>
 									<td>{{ $aluno->nome  }} </td>
 									<td>{{ $aluno->cpf  }} </td>
-									<td>{{ $aluno->cursos_id  }} </td>
+									<td>{{ $aluno->curso  }} </td>
 									<td>{{ $aluno->email  }} </td>
 									<td>{{ $aluno->telefone  }} </td>
-									<td class="text-center">{{ $aluno->anos_id  }} </td>
-									<td>{{ $aluno->semestres_id  }} </td>
-									<td>{{ $aluno->cidades_id  }} </td>
-									<td class="text-center process">{{ $aluno->matricula_id }}</td>
+									<td class="text-center">{{ $aluno->ano  }} </td>
+									<td>{{ $aluno->semestre  }} </td>
+									<td>{{ $aluno->cidade  }} </td>
+									<td class="text-center process">{{ $aluno->status }}</td>
 									<td><a href="/alunos/frequencia/{{ $aluno->id }}&{{ $aluno->RA }}" class="btn btn-success" role="button" aria-label="Ver frequência do aluno"><i aria-hidden="true">Frequencia</i> </td>
 									<td>
 										<form action="#" method="POST">

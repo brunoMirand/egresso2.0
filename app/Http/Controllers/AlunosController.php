@@ -8,10 +8,16 @@ use egresso\repository\Alunos;
 
 class AlunosController extends Controller
 {
+    private $alunos;
 
-    public function listarAlunos()
+    public function __construct(Alunos $alunos)
     {
-        $alunos = Alunos::all();
+        $this->alunos = $alunos;
+    }
+
+    public function listarTodosOsAlunos()
+    {
+        $alunos = $this->alunos->listarAlunos();
         return view('alunos.listagemDeAlunos')->with('alunos', $alunos);
     }
 
