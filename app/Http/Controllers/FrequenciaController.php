@@ -3,7 +3,7 @@
 namespace egresso\Http\Controllers;
 
 use Request;
-use egresso\Frequencia;
+use egresso\repository\Frequencia;
 
 class FrequenciaController extends Controller
 {
@@ -16,11 +16,11 @@ class FrequenciaController extends Controller
 
     public function frequenciaDoAluno($id, $RA)
     {
-        $frequenciaGeral = $this->frequencia->frequenciaGeral($id);
+        $frequenciaGeral = $this->frequencia->listarfrequenciaGeralDoAluno($id);
         $mesesDeFrequencia = $this->frequencia->listarMesesDeFrequenciaDoAluno($RA);
         $frequenciaDiariaDoMes = $this->frequencia->frequenciaDiariaDoMes($id);
         $mesDiaDeFrequencia = $this->frequencia->listarMesEDiaDeFrequencia($RA);
-        $dadosDoAluno = $this->frequencia->dadosDoAluno($id);
+        $dadosDoAluno = $this->frequencia->listarDadosDoAlunoPorID($id);
 
         $dados = [
             'frequenciaGeral' => $frequenciaGeral,
