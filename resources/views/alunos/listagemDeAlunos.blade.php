@@ -62,15 +62,15 @@
 								<tr>
 									<!-- <td><img src="{{ url('storage/images/'.$aluno->foto) }}" style="height: 55px; width: 70px;" title="sua foto"></td> -->
 									<td><img src='data:image/png;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td>
-									<td>{{ $aluno->RA  }} </td>
-									<td>{{ $aluno->nome  }} </td>
-									<td>{{ $aluno->cpf  }} </td>
-									<td>{{ $aluno->curso  }} </td>
-									<td>{{ $aluno->email  }} </td>
-									<td>{{ $aluno->telefone  }} </td>
-									<td class="text-center">{{ $aluno->ano  }} </td>
-									<td>{{ $aluno->semestre  }} </td>
-									<td>{{ $aluno->cidade  }} </td>
+									<td>{{ $aluno->RA }} </td>
+									<td>{{ $aluno->nome }} </td>
+									<td>{{ $aluno->cpf }} </td>
+									<td>{{ $aluno->curso }} </td>
+									<td>{{ $aluno->email }} </td>
+									<td>{{ $aluno->telefone }} </td>
+									<td class="text-center">{{ $aluno->ano }} </td>
+									<td>{{ $aluno->semestre }} </td>
+									<td>{{ $aluno->cidade }} </td>
 									<td class="text-center process">{{ $aluno->status }}</td>
 									<td><a href="/alunos/frequencia/{{ $aluno->id }}&{{ $aluno->RA }}" class="btn btn-success" role="button" aria-label="Ver frequência do aluno"><i aria-hidden="true">Frequencia</i> </td>
 									<td>
