@@ -84,4 +84,5 @@
 							</tbody>
 						</table>
 					</div>
+					{{ $alunos->links() }}
 @stop

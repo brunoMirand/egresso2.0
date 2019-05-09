@@ -18,6 +18,6 @@ class Alunos extends Model
             ->join('semestres', 'semestres_id', '=', 'semestres.id')
             ->join('cidades', 'cidades_id', '=', 'cidades.id')
             ->join('matricula', 'matricula_id', '=', 'matricula.id')
-            ->get();
+            ->paginate(3);
     }
 }
