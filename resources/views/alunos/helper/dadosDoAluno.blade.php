@@ -12,7 +12,8 @@
                 <img class="rounded-circle mx-auto d-block" src='data:image/png;base64,{{ $foto }}' alt="Foto do aluno">
                 <h5 class="text-sm-center mt-2 mb-1">{{ $nome }}</h5>
                 <div class="location text-sm-center">
-                    <i class="fa fa-map-marker"></i> {{ $curso }}</div>
+                    <i class="fa fa-map-marker"></i> {{ $curso }}
+                </div>
             </div>
             <hr>
         </div>

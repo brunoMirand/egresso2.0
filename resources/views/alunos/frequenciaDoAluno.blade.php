@@ -5,11 +5,12 @@
     <div class="section__content section__content--p30">
         <div class="container-fluid">
 			<div class="row">
-				@include('alunos.frequencias.dadosDoAluno')
-				@include('alunos.frequencias.dadosTabelaDoAluno')
-				@include('alunos.frequencias.dadosProgressoDiario')
-				@include('alunos.frequencias.dadosFiltrosMes')
-				@include('alunos.frequencias.dadosTabelaGeral')
+				@include('alunos.helper.dadosDoAluno')
+				@include('alunos.helper.dadosTabelaDoAluno')
+				@include('alunos.helper.dadosProgressoDiario')
+				@include('alunos.helper.carteirinhaEscolar')
+				@include('alunos.helper.dadosFiltrosMes')
+				@include('alunos.helper.dadosTabelaGeral')
 			</div>
 		</div>
 	</div>
