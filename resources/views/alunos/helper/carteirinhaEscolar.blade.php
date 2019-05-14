@@ -9,36 +9,38 @@
                         <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src='data:image/png;base64,{{ $foto }}'>
                     </a>
                     <div class="media-body">
-                        <h2 class="text-light display-6">{{ $nome }}</h2>
-                        <p>Fatec Barueri</p>
+                        <h2 class="text-light display-6">FATEC BARUERI</h2>
+                        <p>{{ $nome }}</p>
                     </div>
                 </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <a href="#">
-                        <i class="fa fa-tasks"></i> RA: 00000000000
-                        <span class="badge badge-primary pull-right">OK</span>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <i class="fa fa-tasks"></i> CPF: 000000000000000
-                        <span class="badge badge-danger pull-right">OK</span>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <i class="fa fa-tasks"></i> Notification
-                        <span class="badge badge-success pull-right">11</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="card-body">
-                <div class="mx-auto d-block">
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" style="width: 210px; height: 210px;" src='data:image/png;base64,{{ $foto }}' alt="Card image cap">
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $nome }}</h5>
+                        <ul class="list-group list-group-flush" style="padding: 0px;">
+                            <li class="list-group-item" style="padding: 0px;">
+                                <i class="fa fa-tasks"></i> RA: 00000000000
+                            </li>
+                            <li class="list-group-item" style="padding: 0px;">
+                                <i class="fa fa-tasks"></i> RA: 00000000000
+                            </li>
+                            <li class="list-group-item" style="padding: 0px;">
+                                <i class="fa fa-tasks"></i> RA: 00000000000
+                            </li>
+                            <li class="list-group-item" style="padding: 0px;">
+                                <i class="fa fa-tasks"></i> RA: 00000000000
+                            </li>
+                            <li class="list-group-item" style="padding: 0px;">
+                                <i class="fa fa-tasks"></i> RA: 00000000000
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </section>
     </aside>
 </div>
