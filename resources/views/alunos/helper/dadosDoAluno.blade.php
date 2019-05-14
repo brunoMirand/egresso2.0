@@ -1,6 +1,6 @@
 @php ($nome = $dados['dadosDoAluno']['nome'])
 @php ($foto = $dados['dadosDoAluno']['foto'])
-@php ($curso = $dados['dadosDoAluno']['cursos_id'])
+@php ($curso = $dados['dadosDoAluno']['curso'])
 <div class="col-md-4">
     <div class="card">
         <div class="card-header">
