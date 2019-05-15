@@ -2,11 +2,11 @@
 
 namespace egresso\Http\Controllers;
 
-use egresso\repository\Cursos;
-use egresso\repository\Anos;
-use egresso\repository\Semestres;
-use egresso\repository\Cidades;
-use egresso\repository\StatusDaMatricula as Status;
+use egresso\Repository\Cursos;
+use egresso\Repository\Anos;
+use egresso\Repository\Semestres;
+use egresso\Repository\Cidades;
+use egresso\Repository\StatusDaMatricula as Status;
 
 class FormularioDeCadastroController extends Controller
 {

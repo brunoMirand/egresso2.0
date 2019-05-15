@@ -3,7 +3,7 @@
 namespace egresso\Http\Controllers;
 
 use Request;
-use egresso\repository\Frequencia;
+use egresso\Repository\Frequencia;
 
 class FrequenciaController extends Controller
 {

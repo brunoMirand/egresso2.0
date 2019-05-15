@@ -4,7 +4,7 @@ namespace egresso\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use egresso\repository\Alunos;
+use egresso\Repository\Alunos;
 
 class AlunosController extends Controller
 {
