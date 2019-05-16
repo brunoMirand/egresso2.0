@@ -19,7 +19,7 @@
 			<input class="form-header" type="text" name="pesquisar" placeholder="pesquisar por nome &amp; RA..." autocomplete="off" />
 				<select name="anos_id" id="select" class="form-control">
 					<option disabled selected>Filtro por ano</option>
-						<option value=""></option>
+					<option value=""></option>
 				</select>
 				<select name="cursos_id" id="select" class="form-control">
 					<option disabled selected>Filtro por Curso</option>
@@ -60,8 +60,8 @@
 								<p class="text text-right">  {{ $contarAlunos = count($alunos) }} Registros </p>
 								@foreach($alunos as $aluno)
 								<tr>
-									<!-- <td><img src="{{ url('storage/images/'.$aluno->foto) }}" style="height: 55px; width: 70px;" title="sua foto"></td> -->
-									<td><img src='data:image/png;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td>
+									<td><img src="/images/{{$aluno->foto}}" style="height: 55px; width: 70px;" title="sua foto"></td>
+									<!-- <td><img src='data:image/png;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td> -->
 									<td>{{ $aluno->RA }} </td>
 									<td>{{ $aluno->nome }} </td>
 									<td>{{ $aluno->cpf }} </td>
@@ -75,7 +75,7 @@
 									<td><a href="/alunos/frequencia/{{ $aluno->id }}&{{ $aluno->RA }}" class="btn btn-success" role="button" aria-label="Ver frequência do aluno"><i aria-hidden="true">Frequencia</i> </td>
 									<td>
 										<form action="#" method="POST">
-										<input type="hidden" name="id" value="">
+											<input type="hidden" name="id" value="">
 											<button class="btn btn-danger"><i class="fa fa-close"></i> </button>
 										</form>
 									</td>

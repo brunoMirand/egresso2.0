@@ -10,7 +10,7 @@
             <div class="card-header user-header alt bg-dark">
                 <div class="media">
                     <a href="#">
-                        <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src='data:image/png;base64,{{ $foto }}'>
+                        <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="/images/{{$foto}}">
                     </a>
                     <div class="media-body">
                         <h2 class="text-light display-6">FATEC BARUERI</h2>
@@ -20,7 +20,7 @@
             </div>
             <div class="card-group">
                 <div class="card">
-                    <img class="card-img-top" style="width: 210px; height: 210px; padding: 2px 2px 2px 2px;" src='data:image/png;base64,{{ $foto }}' alt="Card image cap">
+                    <img class="card-img-top" style="width: 210px; height: 210px; padding: 2px 2px 2px 2px;" src="/images/{{$foto}}" alt="Card image cap">
                 </div>
                 <div class="card">
                     <div class="card-body">
@@ -43,8 +43,8 @@
                 </div>
             </div>
         </section>
-            <div class="">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Imprimir Carteirinha</button>
-            </div>
+        <div class="">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Imprimir Carteirinha</button>
+        </div>
     </aside>
 </div>
