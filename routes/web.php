@@ -19,3 +19,4 @@ Route::get('/alunos/frequencia/{id}&{RA}', 'FrequenciaController@frequenciaDoAlu
 Route::get('/formulario', 'FormularioDeCadastroController@formularioDeCadastro');
 Route::post('/alunos/cadastro', 'AlunosController@cadastrarAluno');
 Route::get('/alunos/remove/{id}', 'AlunosController@removerAluno');
+Route::get('/qrcode', 'QrCodeController@exibirQrCode');
