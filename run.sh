@@ -3,7 +3,7 @@ echo Copying the configuration example file
 cp .env.example .env
 
 echo Install dependencies
-composer install
+composer update
 
 echo Generate key
 php artisan key:generate
