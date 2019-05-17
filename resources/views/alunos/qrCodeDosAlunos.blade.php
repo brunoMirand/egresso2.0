@@ -21,7 +21,7 @@
                 <div class="card-header user-header alt bg-dark">
                     <div class="media">
                         <a href="#">
-                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="{{$dados['qrcodeDados']}}">
+                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/{{$dados['dadosDoAluno'][$i]['foto']}}">
                         </a>
                         <div class="media-body">
                             <h2 class="text-light display-6">FATEC BARUERI</h2>
@@ -38,25 +38,25 @@
                             <h5 class="card-title"></h5>
                             <ul class="list-group list-group-flush" style="padding: 0px;">
                                 <li class="list-group-item" style="padding: 0px;">
-                                    <i class="fa fa-tasks"></i> RA:
+                                    <i class="fa fa-tasks"></i> RA: {{$dados['dadosDoAluno'][$i]['RA']}}
                                 </li>
                                 <li class="list-group-item" style="padding: 0px;">
-                                    <i class="fa fa-tasks"></i> CPF:
+                                    <i class="fa fa-tasks"></i> CPF: {{$dados['dadosDoAluno'][$i]['cpf']}}
                                 </li>
                                 <li class="list-group-item" style="padding: 0px;">
-                                    <i class="fa fa-tasks"></i> CURSO:
+                                    <i class="fa fa-tasks"></i> CURSO: {{$dados['dadosDoAluno'][$i]['curso']}}
                                 </li>
                                 <li class="list-group-item" style="padding: 0px;">
-                                    <i class="fa fa-tasks"></i> CIDADE:
+                                    <i class="fa fa-tasks"></i> CIDADE: {{$dados['dadosDoAluno'][$i]['cidade']}}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
-                <div class="">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Imprimir Carteirinha</button>
-                </div>
+            <div class="">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Imprimir Carteirinha</button>
+            </div>
         </aside>
     </div>
     <br>

@@ -1134,7 +1134,7 @@ pre code {
     .col-md-4 {
         -ms-flex: 0 0 33.333333%;
         flex: 0 0 33.333333%;
-        max-width: 33.333333%
+        max-width: 38.333333%
     }
     .col-md-5 {
         -ms-flex: 0 0 41.666667%;
@@ -4607,7 +4607,7 @@ input[type=submit].btn-block {
 }
 
 .card-header {
-    padding: .75rem 1.25rem;
+    padding: .75rem 3.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .03);
     border-bottom: 1px solid rgba(0, 0, 0, .125)

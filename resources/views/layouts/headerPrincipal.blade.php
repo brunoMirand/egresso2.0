@@ -88,7 +88,7 @@
 
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                     <li>
-                                        <a href="#">QrCode</a>
+                                        <a href="/qrcode">QRCode</a>
                                     </li>
                                     <li>
                                         <a href="#">Fazer Backup</a>
@@ -155,7 +155,7 @@
                                 <i class="fa fa-save"></i>Opções</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="#">QrCode</a>
+                                    <a href="/qrcode">QRCode</a>
                                 </li>
                                 <li>
                                     <a href="#">Efetuar Backup</a>

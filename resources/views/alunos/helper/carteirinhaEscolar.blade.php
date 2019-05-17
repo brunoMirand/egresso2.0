@@ -20,7 +20,7 @@
             </div>
             <div class="card-group">
                 <div class="card">
-                    <img class="card-img-top" style="width: 210px; height: 210px; padding: 2px 2px 2px 2px;" src="/images/{{$foto}}" alt="Card image cap">
+                    <img class="card-img-top" style="width: 210px; height: 210px; padding: 2px 2px 2px 2px;" src="{{ $dados['qrcode'] }}" alt="Card image cap">
                 </div>
                 <div class="card">
                     <div class="card-body">
