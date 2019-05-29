@@ -14,14 +14,23 @@ class Frequencia extends Model
 
     public function listarDadosDoAlunoPorID($id)
     {
-        return Alunos::select('*', 'alunos.id')
+        return Alunos::select('*', 'alunos.id', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))
         ->join('cursos', 'cursos_id', '=', 'cursos.id')
         ->join('anos', 'anos_id', '=', 'anos.id')
         ->join('semestres', 'semestres_id', '=', 'semestres.id')
         ->join('cidades', 'cidades_id', '=', 'cidades.id')
         ->join('matricula', 'matricula_id', '=', 'matricula.id')
+        ->leftjoin('frequencia', 'alunos.RA', '=', 'frequencia.RA')
         ->where('alunos.id', '=', $id)
         ->first();
+    }
+
+    public function inserirFrequencia($RA, $id)
+    {
+        return DB::table('frequencia')->insert([
+            'RA' => $RA,
+            'alunos_id' => $id,
+        ]);
     }
 
     public function listarfrequenciaGeralDoAluno($id)
