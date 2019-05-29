@@ -9,6 +9,8 @@
 
     <title>FATEC BARUERI</title>
     <link rel="icon" href="#">
+    <script type="text/javascript" src="/js/instascan.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 
     <link href="/css/font-face.css" rel="stylesheet" media="all">
     <link href="/assets/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -80,24 +82,19 @@
 <!-- Bootstrap JS-->
 <script src="/assets/bootstrap-4.1/popper.min.js"></script>
 <script src="/assets/bootstrap-4.1/bootstrap.min.js"></script>
-<!-- /assets JS       -->
-<script src="/assets/slick/slick.min.js">
-</script>
+<!-- /assets JS -->
+<script src="/assets/slick/slick.min.js"></script>
 <script src="/assets/wow/wow.min.js"></script>
 <script src="/assets/animsition/animsition.min.js"></script>
-<script src="/assets/bootstrap-progressbar/bootstrap-progressbar.min.js">
-</script>
+<script src="/assets/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <script src="/assets/counter-up/jquery.waypoints.min.js"></script>
-<script src="/assets/counter-up/jquery.counterup.min.js">
-</script>
+<script src="/assets/counter-up/jquery.counterup.min.js"></script>
 <script src="/assets/circle-progress/circle-progress.min.js"></script>
 <script src="/assets/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="/assets/chartjs/Chart.bundle.min.js"></script>
-<script src="/assets/select2/select2.min.js">
-</script>
-
+<script src="/assets/select2/select2.min.js"></script>
 <!-- Main JS -->
-    <script src="/js/main.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
 </html>

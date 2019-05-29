@@ -273,23 +273,18 @@
 <script src="/assets/bootstrap-4.1/popper.min.js"></script>
 <script src="/assets/bootstrap-4.1/bootstrap.min.js"></script>
 <!-- /assets JS       -->
-<script src="/assets/slick/slick.min.js">
-</script>
+<script src="/assets/slick/slick.min.js"></script>
 <script src="/assets/wow/wow.min.js"></script>
 <script src="/assets/animsition/animsition.min.js"></script>
-<script src="/assets/bootstrap-progressbar/bootstrap-progressbar.min.js">
-</script>
+<script src="/assets/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <script src="/assets/counter-up/jquery.waypoints.min.js"></script>
-<script src="/assets/counter-up/jquery.counterup.min.js">
-</script>
+<script src="/assets/counter-up/jquery.counterup.min.js"></script>
 <script src="/assets/circle-progress/circle-progress.min.js"></script>
 <script src="/assets/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="/assets/chartjs/Chart.bundle.min.js"></script>
-<script src="/assets/select2/select2.min.js">
-</script>
-
+<script src="/assets/select2/select2.min.js"></script>
 <!-- Main JS -->
-    <script src="/js/main.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
 </html>
