@@ -36,7 +36,7 @@
                             id: lista[5],
                             "_token": "{{ csrf_token() }}",
                         },
-                        url: '/valida/id',
+                        url: '/valida',
                         success: function(data) {
                             document.querySelector("[name='nome']").value = lista[0];
                             document.querySelector("[name='ra']").value = lista[1];
