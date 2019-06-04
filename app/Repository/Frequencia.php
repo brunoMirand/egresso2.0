@@ -14,7 +14,7 @@ class Frequencia extends Model
 
     public function listarDadosDoAlunoPorID($id)
     {
-        return Alunos::select('*', 'alunos.id', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))
+        return Alunos::select('*', 'alunos.RA', 'alunos.id', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, TIME(data_entrada) as horario"))
         ->join('cursos', 'cursos_id', '=', 'cursos.id')
         ->join('anos', 'anos_id', '=', 'anos.id')
         ->join('semestres', 'semestres_id', '=', 'semestres.id')
@@ -59,7 +59,7 @@ class Frequencia extends Model
 
     public function frequenciaDiariaDoMes($id)
     {
-        $mes = '11';
+        $mes = '06';
         $frequencia = DB::table('frequencia')
             ->select('frequencia.RA', DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia, COUNT(frequencia.RA) as quantidade"))
             ->leftjoin('alunos', 'frequencia.RA', '=', 'alunos.RA')
@@ -77,7 +77,7 @@ class Frequencia extends Model
 
     public function listarMesEDiaDeFrequencia($RA)
     {
-        $mes = '11';
+        $mes = '06';
         $frequencia = DB::table('frequencia')
             ->select(DB::raw("MONTH(data_entrada) as mes, DAY(data_entrada) as dia"))
             ->where([

@@ -24,31 +24,24 @@ class AlunosController extends Controller
     public function cadastrarAluno(Request $request)
     {
         $data = $request->all();
-        if (empty($data['foto'])) {
-            return redirect()
-                    ->back()
-                    ->with('error', 'Falha ao fazer upload')
-                    ->withInput();
-        }
-
         if ($request->hasFile('foto') && $data['foto']->isValid()) {
-            $data['foto'] = $this->converterImagemEmBase64($request->file('foto'));
+            // $data['foto'] = $this->converterImagemEmBase64($request->file('foto'));
+            $data['foto'] = $request->foto->getClientOriginalName();
         }
 
         Alunos::create($data);
-        return redirect()->action('AlunosController@listarAlunos')->withInput($request->only('nome'));
+        return redirect()->action('AlunosController@listarTodosOsAlunos')->withInput($request->only('nome'));
     }
 
     public function removerAluno($id)
     {
         $aluno = Alunos::find($id);
         $aluno->delete();
-        return redirect()->action('AlunosController@listarAlunos');
+        return redirect()->action('AlunosController@listarTodosOsAlunos');
     }
 
     public function converterImagemEmBase64($imagem)
     {
         return \base64_encode(file_get_contents($imagem));
     }
-
 }

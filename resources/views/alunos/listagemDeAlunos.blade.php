@@ -34,8 +34,11 @@
 				<div class="col-md-12">
 					<div class="table-responsive m-b-40">
 					@if(old('nome'))
-						<div class="alert alert-primary" role="alert">
+						<div class="alert alert-primary alert-dismissible fade show" role="alert">
 							Aluno {{ old('nome') }} adicionando com sucesso
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    							<span aria-hidden="true">&times;</span>
+  							</button>
 						</div>
 					@endif
 						<table class="table table-borderless table-data3 ">
@@ -57,11 +60,11 @@
 								</tr>
 							</thead>
 							<tbody>
-								<p class="text text-right">  {{ $contarAlunos = count($alunos) }} Registros </p>
+								<p class="text text-left">  {{ $contarAlunos = count($alunos) }} Registros </p>
 								@foreach($alunos as $aluno)
 								<tr>
 									<td><img src="/images/{{$aluno->foto}}" style="height: 55px; width: 70px;" title="sua foto"></td>
-									<!-- <td><img src='data:image/png;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td> -->
+									<!-- <td><img src='data:image/jpg;base64,{{$aluno->foto}}' style="height: 55px; width: 70px;" title="sua foto"></td> -->
 									<td>{{ $aluno->RA }} </td>
 									<td>{{ $aluno->nome }} </td>
 									<td>{{ $aluno->cpf }} </td>
