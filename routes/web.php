@@ -20,8 +20,8 @@ Route::get('/formulario', 'FormularioDeCadastroController@formularioDeCadastro')
 Route::post('/alunos/cadastro', 'AlunosController@cadastrarAluno');
 Route::get('/alunos/remove/{id}', 'AlunosController@removerAluno');
 Route::get('/qrcode', 'QRCodeController@exibirQRCode');
-Route::post('/valida/{id}', 'ValidaQRCodeController@validaQRCode');
+Route::post('/valida', 'ValidaQRCodeController@validaQRCode');
 
 Route::get("/qrcode/identificacao", function(){
     return View::make("qrcode.pageQRCode");
- });
+});

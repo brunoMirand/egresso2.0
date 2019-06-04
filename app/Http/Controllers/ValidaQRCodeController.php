@@ -16,18 +16,17 @@ class ValidaQRCodeController extends Controller
 
     public function validaQRCode(Request $request)
     {
-        setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-        $diaEntrada = strftime('%d');
-        $mesEntrada = strftime('%m-%b');
-        $anoEntrada = strftime('%G');
-        $horarioEntrada = strftime('%T');
+        $timeZone = new \DateTimeZone('America/Sao_Paulo');
+        $data = new \DateTime('now', $timeZone);
+        $diaEntrada = $data->format('d');
+        $mesEntrada = $data->format('m');
+        $anoEntrada = $data->format('Y');
+        $horarioEntrada = $data->format('H:i:s');
 
         $request = $request->all();
-
         $id = $request['id'];
 
         $dados = $this->dadosDoAluno->listarDadosDoAlunoPorID($id);
-
         if (!empty($dados)) {
             $RA = $request['RA'];
             $status = $dados['status'];
@@ -36,28 +35,28 @@ class ValidaQRCodeController extends Controller
             $dia = $dados['dia'];
             $horario = $dados['horario'];
             $imagem = $dados['foto'];
+
             $this->dadosDoAluno->inserirFrequencia($RA, $id);
-                $response = [
-                    'id' => $id,
-                    'ra' => $RA,
-                    'status' => $status,
-                    'dataAnterior' => [
-                        'ano' => $ano,
-                        'mes' => $mes,
-                        'dia' => $dia,
-                        'horario' => $horario,
-                    ],
-                    'dataEntrada' => [
-                        'ano' => $anoEntrada,
-                        'mes' => $mesEntrada,
-                        'dia' => $diaEntrada,
-                        'horario' => $horarioEntrada,
-                    ],
-                    'imagem' => $imagem,
-                ];
+            $response = [
+                'id' => $id,
+                'ra' => $RA,
+                'status' => $status,
+                'dataAnterior' => [
+                    'ano' => $ano,
+                    'mes' => $mes,
+                    'dia' => $dia,
+                    'horario' => $horario,
+                ],
+                'dataEntrada' => [
+                    'ano' => $anoEntrada,
+                    'mes' => $mesEntrada,
+                    'dia' => $diaEntrada,
+                    'horario' => $horarioEntrada,
+                ],
+                'imagem' => $imagem,
+            ];
             echo json_encode($response);
             http_response_code(200);
-            die;
         }
     }
 }

@@ -1,17 +1,9 @@
 @extends('layouts.headerFrequenciaAluno')
 
 @section('conteudo')
-<body class="animsition">
+
+<div class="container-fluid">
     <div class="page-wrapper">
-        <header class="header-mobile d-block d-lg-none">
-            <div class="header-mobile__bar">
-                <div class="container-fluid">
-                    <div class="header-mobile-inner">
-                        <img src="#" alt="FATEC"/>
-                    </div>
-                </div>
-            </div>
-        </header>
         <div class="page-container">
             <header class="header-desktop">
                 <div class="section__content section__content--p30">
@@ -44,7 +36,7 @@
                             id: lista[5],
                             "_token": "{{ csrf_token() }}",
                         },
-                        url: '/valida/id',
+                        url: '/valida',
                         success: function(data) {
                             document.querySelector("[name='nome']").value = lista[0];
                             document.querySelector("[name='ra']").value = lista[1];

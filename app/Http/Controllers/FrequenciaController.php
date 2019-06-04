@@ -37,5 +37,4 @@ class FrequenciaController extends Controller
 
         return view('alunos.frequenciaDoAluno')->with('dados', $dados);
     }
-
 }
